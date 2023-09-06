@@ -4,17 +4,27 @@ import {HiMiniLanguage} from "react-icons/hi2"
 import { focusTrapped, languages } from "../../utils/utils";
 import { SelectLang } from "../../types/Types";
 import i18next from "i18next";
-import {useState, FormEvent, useEffect, useRef} from "react";
+import {useState, FormEvent, useEffect, useRef, Dispatch, SetStateAction} from "react";
+import {  useCurrentLang } from "../../context/LangContext";
 
 
-const LangaugePopup = () => {
+interface Props {
+  setShowLangPopup: Dispatch<SetStateAction<boolean | null>>
+}
+
+const LangaugePopup = ({setShowLangPopup}: Props) => {
 
   
   const [selectedOption, setSelectedOption] = useState<SelectLang | null>(languages[0]);
   
+  const { updateLang } = useCurrentLang();
+  
   const handleSubmit = (e:FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     i18next.changeLanguage(selectedOption?.value)
+    localStorage.setItem("isVisitedLangPopup", JSON.stringify(true))
+    setShowLangPopup(true)
+    updateLang(selectedOption?.value as string)
   }
 
   const firstFocusableElement = useRef<HTMLHeadingElement | null>(null)

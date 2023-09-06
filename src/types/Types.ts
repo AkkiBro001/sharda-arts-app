@@ -3,8 +3,3 @@ export interface SelectLang {
     label: string,
 }
 
-export interface focusTrappedProps {
-    e: KeyboardEvent,
-    firstFocusableElement: HTMLElement,
-    lastFocusableElement: HTMLElement,
-}

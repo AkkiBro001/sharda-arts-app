@@ -1,10 +1,16 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import LangaugePopup from "./components/languagePopup/LangaugePopup"
+import { useCurrentLang } from "./context/LangContext"
+import Header from "./components/header/Header"
+
 
 
 function App() {
 
-    const currentLang = localStorage.getItem("i18nextLng")
+    const {currentLang} = useCurrentLang()
+    const [langPopup, setShowLangPopup] = useState<boolean | null>(JSON.parse(JSON.stringify(localStorage.getItem("isVisitedLangPopup"))))
+    
+    
 
     useEffect(()=>{
         if(currentLang === "hn" || currentLang === "mr"){
@@ -16,11 +22,8 @@ function App() {
 
     return (
       <div className="App">
-      <LangaugePopup/>
-      <h2>Sharda Arts</h2>
-      <a href="1">adasdasd</a>
-      <a href="2">adasdasd</a>
-      <a href="3">adasdasd</a>
+      {!langPopup && <LangaugePopup setShowLangPopup={setShowLangPopup}/>}
+      <Header/>
       </div>
     )
 }
