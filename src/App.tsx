@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
-import LangaugePopup from "./components/languagePopup/LangaugePopup"
 import { useCurrentLang } from "./context/LangContext"
 import Header from "./components/header/Header"
-
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import GettingStarted from "./pages/gettingStarted/GettingStarted"
+import Home from "./pages/home/Home"
 
 
 function App() {
@@ -22,8 +23,14 @@ function App() {
 
     return (
       <div className="App">
-      {!langPopup && <LangaugePopup setShowLangPopup={setShowLangPopup}/>}
-      <Header/>
+      <BrowserRouter>
+      {langPopup && <Header/>}
+      <Routes>
+        <Route path="/" element={<Home langPopup={langPopup}/>}/>
+        <Route path="/getting-started" element={<GettingStarted setShowLangPopup={setShowLangPopup} langPopup={langPopup}/>}/>
+      </Routes>
+      
+      </BrowserRouter>
       </div>
     )
 }

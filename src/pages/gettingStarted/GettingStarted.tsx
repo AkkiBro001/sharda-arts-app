@@ -1,20 +1,23 @@
-import style from "./LangaugePopup.module.scss";
+import style from "./GettingStarted.module.scss";
 import Select from 'react-select'
-import {HiMiniLanguage} from "react-icons/hi2"
-import { focusTrapped, languages } from "../../utils/utils";
+import { langIcon } from "../../assets";
+import { languages } from "../../utils/utils";
 import { SelectLang } from "../../types/Types";
 import i18next from "i18next";
-import {useState, FormEvent, useEffect, useRef, Dispatch, SetStateAction} from "react";
+import {useState, FormEvent, Dispatch, SetStateAction} from "react";
 import {  useCurrentLang } from "../../context/LangContext";
-
+import { useNavigate } from "react-router-dom";
+import { primaryBg } from "../../assets";
 
 interface Props {
   setShowLangPopup: Dispatch<SetStateAction<boolean | null>>
+  langPopup: boolean | null
 }
 
-const LangaugePopup = ({setShowLangPopup}: Props) => {
+const GettingStarted = ({setShowLangPopup, langPopup}: Props) => {
 
-  
+  const navigate = useNavigate()
+
   const [selectedOption, setSelectedOption] = useState<SelectLang | null>(languages[0]);
   
   const { updateLang } = useCurrentLang();
@@ -27,34 +30,18 @@ const LangaugePopup = ({setShowLangPopup}: Props) => {
     updateLang(selectedOption?.value as string)
   }
 
-  const firstFocusableElement = useRef<HTMLHeadingElement | null>(null)
-  const lastFocusableElement = useRef<HTMLButtonElement | null>(null)
-
-  const focusElement = (e: KeyboardEvent) => {
-    
-    focusTrapped(e, firstFocusableElement.current as HTMLElement, lastFocusableElement.current as HTMLElement)
+  if(langPopup){
+    navigate("/");
+    return;
   }
-  
-
-  useEffect(()=>{
-    
-    // if(!firstFocusableElement.current || !lastFocusableElement.current) return 
-    
-
-    window.addEventListener("keyup", focusElement)
-
-    return () => window.removeEventListener("keyup", focusElement)
-  }, [firstFocusableElement, lastFocusableElement])
-
-  
   
 
   return (
     <section className={`${style.languagePopup} langPopup`}>
+        <img src={primaryBg} alt="primaryBg" className={style.bg}/>
         <form className={style.content} onSubmit={handleSubmit}>
-          <HiMiniLanguage className={style.langIcon}/>
-          <h1 className="title"
-          ref={firstFocusableElement}
+          <img src={langIcon} alt="" className={style.langIcon}/>
+          <h1 className={style.heading}
           tabIndex={0}
           >Choose Your Langauge<br/>अपनी भाषा चुनें / तुमची भाषा निवडा</h1>
           <Select
@@ -79,7 +66,7 @@ const LangaugePopup = ({setShowLangPopup}: Props) => {
                 ...baseStyles,
                 borderColor: state.isFocused ? 'transparent' : 'inherit',
                 boxShadow: state.isFocused ? 'none' : 'inherit',
-                outline: state.isFocused ? '2px solid var(--primary-color)' : 'none',
+                outline: state.isFocused ? '2px solid var(--primary-dark-color)' : 'none',
                 outlineOffset: state.isFocused ? '2px' : '0px',
             }),
             container: (baseStyles) => ({
@@ -90,10 +77,10 @@ const LangaugePopup = ({setShowLangPopup}: Props) => {
           />
               
         <button className="button">OK</button>
-        <button ref={lastFocusableElement} style={{outline:"none", opacity: 0, border: 0}}></button>
+        
         </form>
     </section>
   )
 }
 
-export default LangaugePopup
+export default GettingStarted

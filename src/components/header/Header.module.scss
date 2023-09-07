@@ -1,0 +1,93 @@
+.navigation {
+    position: relative;
+    
+    
+    .mobileMenuContainer{
+        position: absolute;
+        z-index: 1000;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0,0,0,0.5);
+        
+        
+        .mobileMenu{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 1em;
+            background-color: var(--light-color);
+            box-shadow: var(--drop-shadow);
+            border-bottom-left-radius: var(--border-md-radius);
+            border-bottom-right-radius: var(--border-md-radius);
+
+            .closeBtn{
+                align-self: flex-end;
+                font-size: calc(var(--icon-size) * 0.8);
+                border: 0;
+                background-color: transparent;
+                line-height: 0;
+            }
+
+            .links{
+                display: flex;
+                flex-direction: column;
+
+                a{
+                    padding: 0.85em 0;
+                    text-decoration: none;
+                }
+
+                a + a{
+                    border-top: 1px solid var(--dark-opac-color);
+                }
+            }
+    
+            
+        }
+    }
+
+    .navMenu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+
+        .mobileMenu {
+            position: absolute;
+            width: 100%;
+            background-color: var(--light-color);
+            z-index: 1000;
+        }
+
+        .mobileMenuIcon,
+        .cartIcon {
+            font-size: var(--icon-size);
+            line-height: 0;
+            cursor: pointer;
+
+        }
+
+        .cartIcon {
+            position: relative;
+
+            .cartCounter {
+                position: absolute;
+                font-size: 0.80rem;
+                font-weight: 600;
+                background-color: var(--primary-color);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                top: 0;
+                right: 0;
+                transform: translateX(30%);
+            }
+        }
+
+    }
+
+
+}

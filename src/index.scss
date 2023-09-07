@@ -11,9 +11,16 @@
   --light-color: #e5e5e5;
   --dark-color: #000000;
   --primary-color: #4cb19f;
+  --primary-dark-color: #367d70;
   --primary-opac-color: rgba(76, 177, 159, 0.5);
   --light-gradient: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(238,238,238,1) 100%);
-  --border-radius: 5px;
+  --dark-opac-color: rgba(0,0,0,0.3);
+  --drop-shadow: 0 0 10px rgba(0,0,0,0.3);
+
+  
+  --border-sm-radius: 5px;
+  --border-md-radius: 10px;
+  --icon-size: 30px;
 }
 
 [data-lang="en"]{
@@ -50,8 +57,16 @@ body{
   
 }
 
-h1,h2,h3,h4,ul,ol{
+h1,h2,h3,h4{
   all: unset;
+}
+
+ul,ol{
+  all: unset;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 //!------- Utility Classes --------------------------------------------------//
@@ -88,7 +103,7 @@ h1,h2,h3,h4,ul,ol{
 .button{
   border: none;
   padding: 0.5em 1em;
-  border-radius: 5px;
+  border-radius: var(--border-sm-radius);
   font-size: var(--body);
   font-weight: var(--font-bold);
   letter-spacing: 0.5px;

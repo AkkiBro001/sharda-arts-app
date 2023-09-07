@@ -1,0 +1,70 @@
+@import "../../media.scss";
+
+.languagePopup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    
+    .bg{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        object-fit: cover;
+        opacity: 0.9;
+    }
+
+    .content{
+        width: min(500px, 100%);
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+        text-align: center;
+        gap: 1.5em;
+        // color: var(--light-color);
+        
+
+        .heading{
+            font-size: 1.5rem;
+            line-height: calc(1.5rem * 1.5);
+            display: block;
+            margin-bottom: 0.75em;
+            font-weight: var(--font-bold);
+
+            @include media_md{
+                font-size: 1.7rem;
+                line-height: calc(1.7rem * 1.5);
+            }
+
+            @include media_xl{
+                font-size: 2rem;
+                line-height: calc(2rem * 1.5);
+            }
+        }
+        
+
+        .langIcon{
+            width: calc(6vw + 75px);
+            max-width: 165px;
+            align-self: center;
+        }
+
+        .checkIcon{
+            color: var(--primary-color);
+        }
+
+        
+
+        button{
+            background-color: var(--dark-color);
+            cursor: pointer;
+            color: var(--light-color);
+
+            &:focus{
+                outline: 2px solid var(--dark-color);
+            }
+        }
+    }
+}
