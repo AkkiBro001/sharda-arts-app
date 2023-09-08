@@ -6,17 +6,20 @@ import { AiOutlineClose } from "react-icons/ai";
 import { BsCart3, BsSearch } from "react-icons/bs";
 import UserMenuDisplay from "./UserMenuDisplay";
 import { useState, useEffect, useRef } from "react";
-import { FaUserSecret } from "react-icons/fa";
-// import { UserNavMenu } from "./DataForHeader";
-import { DefaultNavMenu, GuestNavMenu, GusetMenuForDesktop } from "./DataForHeader";
+import { DefaultNavMenu, UserNavMenu, UserMenuForDesktop } from "./DataForHeader";
+// import { DefaultNavMenu, GuestNavMenu, GusetMenuForDesktop } from "./DataForHeader";
 import { getIcons } from "../../utils/GetIcons";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { Link } from "react-router-dom";
 
+// import { FaUserSecret } from "react-icons/fa";
+import { en_logo, profileImage, rg_logo } from "../../assets";
+
+
 import { useTranslation } from 'react-i18next';
 import { langTranslation } from "../../utils/utils";
 import { useCurrentLang } from "../../context/LangContext";
-import { en_logo, rg_logo } from "../../assets";
+
 
 const Header = () => {
 
@@ -40,10 +43,12 @@ const Header = () => {
     () => clearTimeout(timer);
   }, [showMobileMenu])
 
-  window.addEventListener("mousedown", (e)=> {console.log(e.currentTarget);})
+  
 
   return (
-    <nav className={style.navigation}>
+    <nav className={style.navigation}
+    
+    >
       {/* //!Mobile Menu Dropdown =========================> */}
       <section
         className={`${style.mobileMenuContainer} ${showMobileMenu}`}
@@ -60,7 +65,7 @@ const Header = () => {
               <UserMenuDisplay />
             </Link>
             {
-              GuestNavMenu.map(({ path, name }) => (
+              UserNavMenu.map(({ path, name }) => (
                 <Link to={path} key={name} className={style.link}>
                   {getIcons(name.toLowerCase())}
                   <span>{t(langTranslation(name))}</span>
@@ -108,9 +113,10 @@ const Header = () => {
               onClick={()=>setShowUserMenu(pre => !pre)}
               >
                 <div className={style.userImage}>
-                  <FaUserSecret className={style.guestIcon} />
+                  {/* <FaUserSecret className={style.guestIcon} /> */}
+                  <img src={profileImage} alt="profileImage" />
                 </div>
-                <MdOutlineKeyboardArrowDown />
+                <MdOutlineKeyboardArrowDown className={style.downArrowIcon}/>
               </div>
 
               {showUserMenu && <section className={style.userProfileMenu}>
@@ -119,7 +125,7 @@ const Header = () => {
                   <UserMenuDisplay />
                 </Link>
                 {
-                  GusetMenuForDesktop.map(({ path, name }) => (
+                  UserMenuForDesktop.map(({ path, name }) => (
                     <Link to={path} key={name} className={style.link}>
                       {getIcons(name.toLowerCase())}
                       <span>{t(langTranslation(name))}</span>
@@ -139,7 +145,7 @@ const Header = () => {
 
         {/* //!Search Bar ===================================> */}
         <form className={style.searchContainer}>
-          <input type="text" placeholder="Search products / services" />
+          <input type="text" placeholder={t(langTranslation("search_placehoder"))} />
           <BsSearch className={style.icon} />
         </form>
       </Container>

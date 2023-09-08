@@ -1,5 +1,6 @@
 @import './index.scss';
 
+
 //*Font Utility -------------------------------->
 
 @mixin title{
@@ -22,6 +23,8 @@
     line-height: calc(var(--title) * 1);
     display: block;
     font-weight: var(--font-regular);
+
+
   }
   
   @mixin smallText{
@@ -29,7 +32,7 @@
     line-height: calc(var(--small-text) * 1);
     display: block;
     font-weight: var(--font-regular);
-  }
+}
   
   
   //*Elements Utility -------------------------------->
@@ -38,7 +41,7 @@
   
   @mixin button{
     border: none;
-    padding: 0.5em 1em;
+    padding: 0.35em 0.75em;
     border-radius: var(--border-sm-radius);
     font-size: var(--regular-text);
     font-weight: var(--font-bold);

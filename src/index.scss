@@ -27,7 +27,14 @@
   --icon-size: 25px;
   --icon-sm-size: 18px;
 
+  @include media_lg{
+    --icon-size: 30px;
+    --icon-sm-size: 21px;
+  }
+
+
   --nav-logo: 100px;
+
   @include media_md{
     --nav-logo: 120px;
   }
@@ -41,6 +48,13 @@
    --subtitle: 1.2rem;
    --regular-text: 1rem;
    --small-text: 0.85rem;
+
+   @include media_lg{
+    --title: 1.7rem;
+    --subtitle: 1.3rem;
+    --regular-text: 1.15rem;
+    --small-text: 0.95rem;
+   }
 }
 
 [data-lang="hn-mr"]{
@@ -48,6 +62,13 @@
   --subtitle: 1.6rem;
   --regular-text: 1.2rem;
   --small-text: 0.85rem;
+
+  @include media_lg{
+    --title: 2.3rem;
+    --subtitle: 1.8rem;
+    --regular-text: 1.4rem;
+    --small-text: 0.90rem;
+  }
 }
 
 

@@ -78,7 +78,7 @@ const ChooseLangauge = ({setShowLangPopup, langPopup}: Props) => {
             }),
             container: (baseStyles) => ({
                 ...baseStyles,
-                fontSize: '1.4rem'
+                fontSize: '1.3rem'
             })
           }}
           />

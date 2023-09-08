@@ -3,25 +3,36 @@
 .UserMenuDisplay {
     display: flex;
     flex-direction: column;
-
+    gap: 0.25em;
+    align-items: center;
 
 
     .userImageContainer {
         display: flex;
-        gap: 0.25em;
+        align-items: center;
+        gap: 0.5em;
 
         .userImage {
-            width: 35px;
-            height: 35px;
+            width: 50px;
+            height: 50px;
             line-height: 0;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            
 
 
             .icon {
-                font-size: var(--icon-size);
+                font-size: calc(var(--icon-size) * 1.5);
+            }
+
+            img{
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+                object-position: center;
             }
 
         }
@@ -30,7 +41,7 @@
             @include subTitle;
             display: flex;
             flex-wrap: wrap;
-
+            max-width: 250px;
         }
 
 

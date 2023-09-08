@@ -3,13 +3,16 @@
 
     "home": "मुखपृष्ठ",
     "services": "सेवाएं",
-    "categories": "उत्पादों",
+    "categories": "प्रॉडक्ट्स",
     "about_us": "जानकारी",
     "contact_us": "संपर्क",
     "change_language": "भाषा बदलें",
     "sign_up": "नया अकाउंट बनायें",
     "sign_in": "लॉग इन करें",
     "hello": "हॅलो",
-    "guest": "गेस्ट"
-    
+    "guest": "गेस्ट",
+    "profile": "अकाऊंट प्रोफाईल",
+    "my_orders": "ऑर्डर्स",
+    "logout": "लॉगऑऊट करें",
+    "search_placehoder": "यहां प्रॉडक्ट्स / सेवाएं खोजें..."
 }

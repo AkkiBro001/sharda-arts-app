@@ -4,12 +4,16 @@
 
     "home": "Home",
     "services": "Services",
-    "categories": "Categories",
+    "categories": "Products",
     "about_us": "About Us",
     "contact_us": "Contact Us",
     "change_language": "Change Language",
     "sign_up": "Sign Up",
     "sign_in": "Sign In",
     "hello": "Hello",
-    "guest": "Guest"
+    "guest": "Guest",
+    "profile": "Profile",
+    "my_orders": "My Orders",
+    "logout": "Log Out",
+    "search_placehoder": "Search products / services here..."
 }
