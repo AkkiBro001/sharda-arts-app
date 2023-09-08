@@ -1,5 +1,6 @@
 import {useNavigate} from "react-router-dom";
 import {useEffect} from "react";
+import Header from "../../components/header/Header";
 
 interface Props {
     langPopup: boolean | null,
@@ -20,9 +21,11 @@ const Home = ({langPopup}: Props) => {
     
   return (
 
-    
-
+    <>
+    <Header/>
     <div>Home</div>
+    
+    </>
   )
 }
 

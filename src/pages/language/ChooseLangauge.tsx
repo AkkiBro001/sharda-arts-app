@@ -1,12 +1,12 @@
-import style from "./GettingStarted.module.scss";
+import style from "./ChooseLangauge.module.scss";
 import Select from 'react-select'
 import { langIcon } from "../../assets";
 import { languages } from "../../utils/utils";
 import { SelectLang } from "../../types/Types";
 import i18next from "i18next";
-import {useState, FormEvent, Dispatch, SetStateAction} from "react";
+import {useState, FormEvent, Dispatch, SetStateAction, useEffect} from "react";
 import {  useCurrentLang } from "../../context/LangContext";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { primaryBg } from "../../assets";
 
 interface Props {
@@ -14,13 +14,17 @@ interface Props {
   langPopup: boolean | null
 }
 
-const GettingStarted = ({setShowLangPopup, langPopup}: Props) => {
+const ChooseLangauge = ({setShowLangPopup, langPopup}: Props) => {
 
   const navigate = useNavigate()
+  const location = useLocation()
 
-  const [selectedOption, setSelectedOption] = useState<SelectLang | null>(languages[0]);
+  const { updateLang, currentLang } = useCurrentLang();
+
+  const getCurrentLang = languages.find(lang => lang.value === currentLang) || languages[0];
+ 
+  const [selectedOption, setSelectedOption] = useState<SelectLang | null>(getCurrentLang);
   
-  const { updateLang } = useCurrentLang();
   
   const handleSubmit = (e:FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -28,12 +32,15 @@ const GettingStarted = ({setShowLangPopup, langPopup}: Props) => {
     localStorage.setItem("isVisitedLangPopup", JSON.stringify(true))
     setShowLangPopup(true)
     updateLang(selectedOption?.value as string)
+    navigate("/");
   }
 
-  if(langPopup){
-    navigate("/");
-    return;
-  }
+  useEffect(()=>{
+
+    if(langPopup && location.pathname.includes("getting-started")){
+      navigate("/");
+      }
+  },[langPopup, location.pathname, navigate])
   
 
   return (
@@ -76,11 +83,11 @@ const GettingStarted = ({setShowLangPopup, langPopup}: Props) => {
           }}
           />
               
-        <button className="button">OK</button>
+        <button>OK</button>
         
         </form>
     </section>
   )
 }
 
-export default GettingStarted
+export default ChooseLangauge

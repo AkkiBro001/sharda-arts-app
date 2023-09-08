@@ -1,0 +1,54 @@
+@import './index.scss';
+
+//*Font Utility -------------------------------->
+
+@mixin title{
+    font-size: var(--title);
+    line-height: calc(var(--title) * 1.5);
+    display: block;
+    margin-bottom: 0.75em;
+    font-weight: var(--font-bold);
+  }
+  
+  @mixin subTitle{
+    font-size: var(--subtitle);
+    line-height: calc(var(--subtitle) * 1.5);
+    display: block;
+    font-weight: var(--font-regular);
+  }
+  
+  @mixin regularText{
+    font-size: var(--regular-text);
+    line-height: calc(var(--title) * 1);
+    display: block;
+    font-weight: var(--font-regular);
+  }
+  
+  @mixin smallText{
+    font-size: var(--small-text);
+    line-height: calc(var(--small-text) * 1);
+    display: block;
+    font-weight: var(--font-regular);
+  }
+  
+  
+  //*Elements Utility -------------------------------->
+  
+  
+  
+  @mixin button{
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: var(--border-sm-radius);
+    font-size: var(--regular-text);
+    font-weight: var(--font-bold);
+    letter-spacing: 0.5px;
+    line-height: initial;
+    &:focus{
+      outline: 2px solid var(--primary-color);
+      outline-offset: 2px;
+    }
+  
+  }
+  
+  

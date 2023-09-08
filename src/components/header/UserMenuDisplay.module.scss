@@ -1,0 +1,49 @@
+@import "../../utilityClasses";
+
+.UserMenuDisplay {
+    display: flex;
+    flex-direction: column;
+
+
+
+    .userImageContainer {
+        display: flex;
+        gap: 0.25em;
+
+        .userImage {
+            width: 35px;
+            height: 35px;
+            line-height: 0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+            .icon {
+                font-size: var(--icon-size);
+            }
+
+        }
+
+        .userName {
+            @include subTitle;
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+
+    }
+
+    .userSignIn {
+        p {
+            @include regularText;
+            opacity: var(--font-dim-opac);
+            display: flex;
+            align-items: center;
+            gap: 0.25em;
+
+        }
+    }
+}

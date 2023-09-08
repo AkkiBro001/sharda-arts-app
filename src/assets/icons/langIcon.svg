@@ -1,2 +1,22 @@
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 244.58"><defs><style>.cls-1{fill:none;stroke:#1a1a1a;stroke-miterlimit:10;stroke-width:8px;}.cls-2,.cls-3{font-size:94.77px;fill:#1a1a1a;font-weight:700;}.cls-2{font-family:NotoSans-Bold, Noto Sans;}.cls-3{font-family:NotoSansDevanagari-Bold, Noto Sans Devanagari;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_2-2" data-name="Layer 2"><path class="cls-1" d="M150,193.38H58L22,232.87l4.19-39.49H18a14,14,0,0,1-14-14V94A14,14,0,0,1,18,80H150a14,14,0,0,1,14,14v85.29A14,14,0,0,1,150,193.38Z"/><path class="cls-1" d="M174.26,117.38H222l36,39.49-4.19-39.49H262a14,14,0,0,0,14-14V18A14,14,0,0,0,262,4H130a14,14,0,0,0-14,14V69.61"/><text class="cls-2" transform="translate(52.25 171.08) scale(0.97 1)">A</text><text class="cls-3" transform="translate(160.25 92.08) scale(0.97 1)">अ</text></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 280 244.6" style="enable-background:new 0 0 280 244.6;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#1A1A1A;stroke-width:10;stroke-miterlimit:10;}
+	.st1{fill:#1A1A1A;}
+	.st2{font-family:'NotoSans-Bold';}
+	.st3{font-size:94.77px;}
+	.st4{font-family:'NotoSansDevanagari-Bold';}
+</style>
+<g id="Layer_2_1_">
+	<g id="Layer_2-2">
+		<path class="st0" d="M150,193.4H58l-36,39.5l4.2-39.5H18c-7.7,0-14-6.3-14-14V94c0-7.7,6.3-14,14-14l0,0h132c7.7,0,14,6.3,14,14
+			l0,0v85.3C164,187,157.8,193.3,150,193.4C150.1,193.4,150,193.4,150,193.4z"/>
+		<path class="st0" d="M174.3,117.4H222l36,39.5l-4.2-39.5h8.2c7.7,0,14-6.3,14-14V18c0-7.7-6.3-14-14-14H130c-7.7,0-14,6.3-14,14
+			v51.6"/>
+		<text transform="matrix(0.97 0 0 1 52.25 171.0801)" class="st1 st2 st3">A</text>
+		<text transform="matrix(0.97 0 0 1 160.25 92.0801)" class="st1 st4 st3">अ</text>
+	</g>
+</g>
+</svg>

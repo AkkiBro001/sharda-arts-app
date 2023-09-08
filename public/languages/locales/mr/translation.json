@@ -1,4 +1,15 @@
 {
-    "choose_your_language" : "तुमची भाषा निवडा"
+    "choose_your_language" : "तुमची भाषा निवडा",
+
+    "home": "मुख्यपृष्ठ",
+    "services": "सेवा",
+    "categories": "उत्पादने",
+    "about_us": "माहिती",
+    "contact_us": "संपर्क",
+    "change_language": "भाषा बदला",
+    "sign_up": "नवीन अकाउंट बनवा",
+    "sign_in": "लॉग इन करा",
+    "hello": "हॅलो",
+    "guest": "गेस्ट"
     
 }

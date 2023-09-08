@@ -1,38 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600&display=swap');
-
+@import "./media";
 //!------- Default Values --------------------------------------------------//
 :root{
   //*Fonts
   --font-thin : 300;
   --font-regular: 400;
   --font-bold: 600;
+  --font-dim-opac: 0.75;
 
   //*Colors
   --light-color: #e5e5e5;
+  --light-color-2: #dfdfdf;
   --dark-color: #000000;
   --primary-color: #4cb19f;
   --primary-dark-color: #367d70;
   --primary-opac-color: rgba(76, 177, 159, 0.5);
   --light-gradient: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(238,238,238,1) 100%);
   --dark-opac-color: rgba(0,0,0,0.3);
-  --drop-shadow: 0 0 10px rgba(0,0,0,0.3);
+  --drop-md-shadow: 0 0 10px rgba(0,0,0,0.3);
+  --drop-sm-shadow: 0 0 5px rgba(0,0,0,0.3);
 
   
   --border-sm-radius: 5px;
   --border-md-radius: 10px;
-  --icon-size: 30px;
+
+  --icon-size: 25px;
+  --icon-sm-size: 18px;
+
+  --nav-logo: 100px;
+  @include media_md{
+    --nav-logo: 120px;
+  }
+  @include media_xl{
+    --nav-logo: 140px;
+  }
 }
 
 [data-lang="en"]{
    --title: 1.5rem;
    --subtitle: 1.2rem;
-   --body: 1rem
+   --regular-text: 1rem;
+   --small-text: 0.85rem;
 }
 
 [data-lang="hn-mr"]{
   --title: 2rem;
   --subtitle: 1.6rem;
-  --body: 1.2rem
+  --regular-text: 1.2rem;
+  --small-text: 0.85rem;
 }
 
 
@@ -69,55 +84,10 @@ ul,ol{
   box-sizing: border-box;
 }
 
-//!------- Utility Classes --------------------------------------------------//
-
-//*Font Utility -------------------------------->
-
-.title{
-  font-size: var(--title);
-  line-height: calc(var(--title) * 1.5);
-  display: block;
-  margin-bottom: 0.75em;
-  font-weight: var(--font-bold);
-}
-
-.subTitle{
-  font-size: var(--subtitle);
-  line-height: calc(var(--title) * 1.5);
-  display: block;
-  font-weight: var(--font-regular);
-}
-
-.body{
-  font-size: var(--body);
-  line-height: calc(var(--title) * 1.5);
-  display: block;
-  font-weight: var(--font-regular);
-}
-
-
-//*Elements Utility -------------------------------->
-
-
-
-.button{
-  border: none;
-  padding: 0.5em 1em;
-  border-radius: var(--border-sm-radius);
-  font-size: var(--body);
-  font-weight: var(--font-bold);
-  letter-spacing: 0.5px;
-  line-height: initial;
-  &:focus{
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
-  }
-
-}
-
 .react-select-container{
   text-align: left;
   color: var(--dark-color);
-  font-size: var(--body);
+  font-size: var(--regular-text);
 }
+
 

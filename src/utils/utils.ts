@@ -1,4 +1,4 @@
-import { SelectLang } from "../types/Types";
+import { RemoveFocusOnElement, SelectLang } from "../types/Types";
 
 export const languages: SelectLang[] = [
     {
@@ -36,3 +36,29 @@ export const focusTrapped = (e:KeyboardEvent, firstFocusableElement:HTMLElement,
       }
     }
   }
+
+
+  export const removeFocusOnElement:RemoveFocusOnElement = (event, activeState, setState, targetElement) => {
+      if(!activeState) return;
+      
+      let FocusWithin;
+      if(typeof activeState === "string"){
+        console.log(event);
+        FocusWithin = event.currentTarget?.closest(`.${activeState}`)
+      }else{
+        FocusWithin = event.currentTarget?.closest(`.${targetElement.classList[0]}`)
+      }
+
+      if(FocusWithin === null){
+        if(typeof activeState === "string"){
+          setState("")
+        }else{
+          setState(false)
+        }
+      }
+
+}
+
+export const langTranslation = (str: string) => {
+    return str.replace(/ /g, "_").toLowerCase();
+}
