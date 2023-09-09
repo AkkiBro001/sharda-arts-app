@@ -13,11 +13,14 @@
         width: 100%;
         -webkit-transform: translateY(-1000px);
         transform: translateY(-1000px);
+        
 
         @include media_md {
             display: none;
         }
 
+        
+        
 
         .mobileMenu {
             width: 100%;
@@ -44,13 +47,15 @@
                 display: flex;
                 flex-direction: column;
 
+                
+
                 .link {
                     padding: 0.85em 1em;
                     text-decoration: none;
                     @include regularText;
                     line-height: 0;
 
-                    &:hover {
+                    &:hover, &:focus {
                         background: var(--light-color-2);
                     }
                 }
@@ -87,6 +92,7 @@
 
         .mobileMenuIcon,
         .cartIcon {
+           
             font-size: var(--icon-size);
             line-height: 0;
             cursor: pointer;
@@ -94,6 +100,10 @@
         }
 
         .mobileMenuIcon {
+            border: 0;
+            background-color: transparent;
+            
+
             @include media_md {
                 display: none;
             }
@@ -125,7 +135,7 @@
 
 
 
-                &:hover {
+                &:hover, &:focus {
                     background-color: var(--primary-dark-color);
                     color: var(--light-color);
                 }
@@ -190,14 +200,20 @@
                         }
                     }
 
+                    .downArrowIcon{
+                        transform: rotate(0deg);
+                        transition: transform 300ms ease;
 
+                        &.animate{
+                            transform: rotate(180deg);
+                        }
+                    }
 
 
                 }
 
                 .userProfileMenu {
                     min-width: max-content;
-                    
                     position: absolute;
                     right: 0;
                     top: calc(100% + 0.75rem);
@@ -208,6 +224,7 @@
                     border-radius: var(--border-md-radius);
                     box-shadow: var(--drop-md-shadow);
                     overflow: hidden;
+                    
 
                     .link {
                         @include regularText;
@@ -218,7 +235,7 @@
 
                         
 
-                        &:hover {
+                        &:hover, &:focus {
                             background: var(--light-color-2);
                         }
                     }

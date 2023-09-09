@@ -5,7 +5,7 @@ import { HiOutlineMenuAlt1 } from "react-icons/hi"
 import { AiOutlineClose } from "react-icons/ai";
 import { BsCart3, BsSearch } from "react-icons/bs";
 import UserMenuDisplay from "./UserMenuDisplay";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { DefaultNavMenu, UserNavMenu, UserMenuForDesktop } from "./DataForHeader";
 // import { DefaultNavMenu, GuestNavMenu, GusetMenuForDesktop } from "./DataForHeader";
 import { getIcons } from "../../utils/GetIcons";
@@ -28,7 +28,7 @@ const Header = () => {
  
   const [showMobileMenu, setShowMobileMenu] = useState<string>("");
   const [showUserMenu, setShowUserMenu] = useState<boolean>(false);
-  const mobileDropdownRef = useRef<HTMLElement | null>(null);
+  
 
   const { currentLang } = useCurrentLang();
 
@@ -43,6 +43,7 @@ const Header = () => {
     () => clearTimeout(timer);
   }, [showMobileMenu])
 
+ 
   
 
   return (
@@ -52,10 +53,8 @@ const Header = () => {
       {/* //!Mobile Menu Dropdown =========================> */}
       <section
         className={`${style.mobileMenuContainer} ${showMobileMenu}`}
-        ref={mobileDropdownRef}
         tabIndex={0}
-        
-      >
+        >
         <div className={style.mobileMenu}>
           <button className={style.closeBtn}
             onClick={() => setShowMobileMenu("slide-out-top")}
@@ -82,12 +81,12 @@ const Header = () => {
 
         <section className={style.navMenu}>
 
-          <div className={style.mobileMenuIcon} onClick={() => setShowMobileMenu("slide-in-top")}>
+          <button className={style.mobileMenuIcon} onClick={() => setShowMobileMenu("slide-in-top")}>
             <HiOutlineMenuAlt1 />
-          </div>
-          <div className={style.logo}>
+          </button>
+          <Link className={style.logo} to="/">
             <img src={currentLang === "en" ? en_logo : rg_logo} alt="" />
-          </div>
+          </Link>
 
           <ul className={style.desktopMenuContainer}>
 
@@ -103,20 +102,24 @@ const Header = () => {
 
           {/* //!Rightside Menu ===================================> */}
           <div className={style.rightMenu}>
-            <div className={style.cartIcon}>
+            <Link className={style.cartIcon} to="/">
               <span className={style.cartCounter}>3</span>
               <BsCart3 />
-            </div>
+            </Link>
 
             <section className={style.userContainer}>
               <div className={style.userProfile}
+              tabIndex={0}
               onClick={()=>setShowUserMenu(pre => !pre)}
+              onKeyDown={(e)=>{(e.code === "Space" || e.code === "Enter") && setShowUserMenu(pre => !pre)}}
               >
                 <div className={style.userImage}>
                   {/* <FaUserSecret className={style.guestIcon} /> */}
                   <img src={profileImage} alt="profileImage" />
                 </div>
-                <MdOutlineKeyboardArrowDown className={style.downArrowIcon}/>
+                <MdOutlineKeyboardArrowDown 
+                className={`${style.downArrowIcon} ${showUserMenu ? style.animate : ""}`}
+                />
               </div>
 
               {showUserMenu && <section className={style.userProfileMenu}>
@@ -145,7 +148,10 @@ const Header = () => {
 
         {/* //!Search Bar ===================================> */}
         <form className={style.searchContainer}>
-          <input type="text" placeholder={t(langTranslation("search_placehoder"))} />
+          <input type="text" placeholder={t(langTranslation("search_placehoder"))} 
+          onClick={() => showUserMenu && setShowUserMenu(false)}
+          onFocus={() => showUserMenu && setShowUserMenu(false)}
+          />
           <BsSearch className={style.icon} />
         </form>
       </Container>
