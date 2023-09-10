@@ -1,7 +1,7 @@
-@import "../../../utilityClasses";
+@import "../../utilityClasses";
 
 
-.signIn{
+.signUp{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -19,9 +19,7 @@
         z-index: -1;
     }
 
-    img{
-        width: 30px;
-    }
+    
 
     .logo{
         width: calc(var(--nav-logo) * 1.7);
@@ -39,65 +37,29 @@
         align-items: center;
         background-color: var(--white-color);
         box-shadow: var(--drop-md-shadow);
+        margin-bottom: 3em;
 
         .title{
             @include subTitle;
             // line-height: 0;
         }
 
-        .googleSignInBtn{
-            @include button;
-            align-self: stretch;
-            display: flex;
-            align-items: center;
-            border: 1px solid var(--light-color-2);
-            background-color: var(--white-color);
-
-            &:focus{
-                @include outerFocus;
-            }
-
-            span{
-                @include regularText;
-                list-style: 0;
-                margin: 0 auto;
-            }
-        }
-
-        .divider{
-            @include regularText;
-            color: var(--dark-opac-color);
-            position: relative;
-            align-self: stretch;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1;
-            // opacity: 0.70;
-
-            &::before{
-                content: '';
-                position: absolute;
-                background-color: var(--dark-opac-color);
-                width: 100%;
-                height: 2px;
-                left: 0;
-                z-index: -1;
-            }
-
-            span{
-                background-color: var(--white-color);
-                padding: 0 0.75em;
-            }
-        }
-
-        .signInForm{
+        .signUpForm{
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: stretch;
             justify-content: center;
-            gap: 0.75em;
+            gap: 1em;
+
+        .inputContainer{
+            display: flex;
+            flex-direction: column;
+            gap: 0.25em;
+
+            label{
+                @include regularText;
+            }
 
             input{
                 @include inputs;
@@ -106,6 +68,7 @@
                     @include outerFocus;
                 }
             }
+        }
 
             button{
                 @include button;
@@ -123,7 +86,7 @@
             justify-content: space-between;
             gap: 0.75em;
             align-items: center;
-
+            margin-top: 0.5em;
             a{
                 &:focus{
                     @include outerFocus;

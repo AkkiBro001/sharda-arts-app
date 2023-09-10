@@ -1,0 +1,39 @@
+@import "../../utilityClasses";
+
+.privacy{
+    @include regularText;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    .effectiveDate{
+        font-style: italic;
+        color: var(--primary-dark-color);
+        font-weight: var(--font-bold)
+    }
+
+    h2{
+        @include subTitle;
+        font-weight: var(--font-bold);
+    }
+
+    ul{
+        
+        list-style: disc;
+        padding-left: 1em;
+        display: flex;
+        flex-direction: column;
+        
+        .pointHeading{
+            font-weight: var(--font-bold);
+        }
+    }
+
+    article{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    
+}

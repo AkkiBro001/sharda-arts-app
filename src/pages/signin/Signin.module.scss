@@ -1,0 +1,138 @@
+@import "../../utilityClasses";
+
+
+.signIn{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5em;
+    gap: 2em;
+    position: relative;
+
+    .bg{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    img{
+        width: 30px;
+    }
+
+    .logo{
+        width: calc(var(--nav-logo) * 1.7);
+    }
+
+
+    .formContainer{
+        width: min(450px, 100%);
+        padding: 1em;
+        border-radius: var(--border-md-radius);
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        background-color: var(--light-color);
+        align-items: center;
+        background-color: var(--white-color);
+        box-shadow: var(--drop-md-shadow);
+        margin-bottom: 3em;
+
+        .title{
+            @include subTitle;
+            // line-height: 0;
+        }
+
+        .googleSignInBtn{
+            @include button;
+            align-self: stretch;
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--light-color-2);
+            background-color: var(--white-color);
+
+            &:focus{
+                @include outerFocus;
+            }
+
+            span{
+                @include regularText;
+                list-style: 0;
+                margin: 0 auto;
+            }
+        }
+
+        .divider{
+            font-size: calc(var(--subtitle) * 0.85);
+            color: var(--dark-opac-color);
+            position: relative;
+            align-self: stretch;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            // opacity: 0.70;
+
+            &::before{
+                content: '';
+                position: absolute;
+                background-color: var(--dark-opac-color);
+                width: 100%;
+                height: 2px;
+                left: 0;
+                z-index: -1;
+            }
+
+            span{
+                background-color: var(--white-color);
+                padding: 0 0.75em;
+            }
+        }
+
+        .signInForm{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: center;
+            gap: 1em;
+
+            input{
+                @include inputs;
+
+                &:focus{
+                    @include outerFocus;
+                }
+            }
+
+            button{
+                @include button;
+                background-color: var(--primary-color);
+                color: var(--white-color);
+            }
+        }
+
+        .links{
+            @include smallText;
+            align-self: stretch;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            justify-content: space-between;
+            gap: 0.75em;
+            align-items: center;
+            margin-top: 0.5em;
+            a{
+                &:focus{
+                    @include outerFocus;
+                    border-radius: var(--border-sm-radius);
+                }
+            
+            }
+            
+        }
+    }
+}

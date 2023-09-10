@@ -20,7 +20,7 @@
   
   @mixin regularText{
     font-size: var(--regular-text);
-    line-height: calc(var(--title) * 1);
+    line-height: calc(var(--regular-text) * 1.9);
     display: block;
     font-weight: var(--font-regular);
 
@@ -47,7 +47,7 @@
   
   @mixin button{
     border: none;
-    padding: 0.35em 0.75em;
+    padding: 0.5em;
     border-radius: var(--border-md-radius);
     font-size: var(--regular-text);
     font-weight: var(--font-bold);

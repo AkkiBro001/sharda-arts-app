@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import { en_logo, googleIcon, primaryBg, rg_logo } from "../../../assets";
+import { en_logo, googleIcon, primaryBg, rg_logo } from "../../assets";
 import style from "./Signin.module.scss";
 import { useTranslation } from "react-i18next";
-import { langTranslation } from "../../../utils/utils";
-import { useCurrentLang } from "../../../context/LangContext";
+import { useCurrentLang } from "../../context/LangContext";
 
 const Signin = () => {
 
@@ -18,11 +17,11 @@ const Signin = () => {
 
             <div className={style.formContainer}>
 
-                <h2 className={style.title}>{t(langTranslation("welcome"))}</h2>
+                <h2 className={style.title}>{t("welcome")}</h2>
 
                 <button className={style.googleSignInBtn}>
                     <img src={googleIcon} alt="googleIcon" />
-                    <span>{t(langTranslation("sign_with_google"))}</span>
+                    <span>{t("sign_with_google")}</span>
                 </button>
 
                 <section className={style.divider}>
@@ -30,19 +29,19 @@ const Signin = () => {
                 </section>
 
                 <form className={style.signInForm}>
-                    <input type="text" placeholder={t(langTranslation("email_palceholder"))} />
-                    <input type="password" placeholder={t(langTranslation("password_palceholder"))} />
+                    <input type="text" placeholder={t("email_placeholder")} />
+                    <input type="password" placeholder={t("password_placeholder")} />
                     <button>{t("sign_in")}</button>
                 </form>
 
                 <div className={style.links}>
                     <div className={style.forSignUp}>
-                        <span>{t(langTranslation("no_account"))}{" "}</span>
+                        <span>{t("no_account")}{" "}</span>
                         <Link to="/signup">{t("sign_up")}</Link>
                     </div>
 
                     <div className={style.forgotPassword}>
-                        <Link to="/signup">{t(langTranslation("forgot_password"))}</Link>
+                        <Link to="/">{t("forgot_password")}</Link>
                     </div>
                 </div>
 

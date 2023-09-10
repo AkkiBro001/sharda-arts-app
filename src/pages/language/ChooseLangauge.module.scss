@@ -71,10 +71,11 @@
             background-color: var(--dark-color);
             cursor: pointer;
             color: var(--light-color);
-            font-size: var(--regularText);  
+            font-size: var(--regularText);
             &:focus{
-                outline: 2px solid var(--dark-color);
-            }
+                outline-color: var(--dark-color);
+            }  
+            
         }
     }
 }

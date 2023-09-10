@@ -32,7 +32,7 @@ const ChooseLangauge = ({setShowLangPopup, langPopup}: Props) => {
     localStorage.setItem("isVisitedLangPopup", JSON.stringify(true))
     setShowLangPopup(true)
     updateLang(selectedOption?.value as string)
-    navigate("/");
+    navigate(-1);
   }
 
   useEffect(()=>{
@@ -74,7 +74,7 @@ const ChooseLangauge = ({setShowLangPopup, langPopup}: Props) => {
                 borderColor: state.isFocused ? 'transparent' : 'inherit',
                 boxShadow: state.isFocused ? 'none' : 'inherit',
                 outline: state.isFocused ? '2px solid var(--primary-dark-color)' : 'none',
-                outlineOffset: state.isFocused ? '2px' : '0px',
+                outlineOffset: state.isFocused ? '1px' : '0px',
             }),
             container: (baseStyles) => ({
                 ...baseStyles,

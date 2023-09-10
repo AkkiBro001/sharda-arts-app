@@ -2,6 +2,7 @@
     
     "choose_your_language" : "Choose Your Language",
 
+
     "home": "Home",
     "services": "Services",
     "categories": "Products",
@@ -17,11 +18,90 @@
     "logout": "Log Out",
     "search_placehoder": "Search products / services here...",
 
+
     "welcome": "Welcome",
     "sign_with_google": "Sign in with google",
     "or": "OR",
-    "email_palceholder": "Enter your email ID",
-    "password_palceholder": "Enter your password",
+    "email_placeholder": "Enter your email ID",
+    "password_placeholder": "Enter your password",
     "no_account": "No account?",
-    "forgot_password": "Forgot Password?"
+    "forgot_password": "Forgot Password?",
+
+
+    "create_account": "Create an account",
+    "name": "Name",
+    "email": "Email",
+    "mobile_no": "Mobile No.",
+    "password": "Password",
+    "cpassword": "Confirm Password",
+    "name_placeholder": "Enter your full name",
+    "mobile_placeholder": "Enter your mobile no.",
+    "cpassword_placeholder": "Enter confirm password",
+    "already_have_account": "Already have an account?",
+    "privacy_policy": "Privacy Policy",
+
+
+    "effective_text": "Effective Date:",
+    "effective_date": "15th-Oct-2023",
+    "welcome_text": "Thank you for choosing Sharda Arts. We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy outlines how we collect, use, and safeguard your data to provide you with an enhanced user experience.",
+    "your_data_is_safe_with_us" : {
+        "heading": "1. Your Data is Safe with Us",
+        "contents": ["We want you to know that your data is safe with us. We do not share your data with any third parties. We take the privacy and security of your information seriously and have implemented strict measures to safeguard it."]
+    },
+    "how_we_use_your_data" : {
+        "heading": "2. How We Use Your Data",
+        "contents": ["We collect and use your data to enhance our services and provide you with the best user experience possible. Here's how we may use your data:"]
+    },
+    "how_we_use_your_data_list": [
+        {
+            "id": 1,
+            "heading": "Improving Our Services",
+            "content": "We analyze your data to understand your preferences, behavior, and usage patterns. This information helps us enhance our products and services to better meet your needs."
+        },
+        {
+            "id": 2,
+            "heading": "Personalization",
+            "content": "We may use your data to personalize your experience on our platform. This includes recommending content, products, or services that are relevant to you."
+        },
+        {
+            "id": 3,
+            "heading": "Communication",
+            "content": "We may use your contact information to communicate with you about important updates, changes to our services, or to respond to your inquiries and requests."
+        },
+        {
+            "id": 4,
+            "heading": "Marketing",
+            "content": "With your consent, we may use your data for marketing purposes, such as sending promotional offers, newsletters, or other marketing communications. You can opt out of these communications at any time."
+        }
+    ],
+    "your_choices": {
+        "heading": "3. Your Choices",
+        "contents": ["You have choices when it comes to your data:"]
+    },
+    "your_choices_list":[
+        {
+            "id": 1,
+            "heading": "Access and Update",
+            "content": "You can access and update your personal information through your account settings on our platform."
+        },
+        {
+            "id": 2,
+            "heading": "Communication Preferences",
+            "content": "You can manage your communication preferences, including opting out of marketing communications."
+        },
+        {
+            "id": 3,
+            "heading": "Data Deletion",
+            "content": "You can request the deletion of your account and associated data, subject to legal and contractual obligations."
+        }
+    ],
+    "contact_us_privacy": {
+        "heading": "4. Contact Us",
+        "contents": [
+            "If you have any questions or concerns about our Privacy Policy or how we handle your data, please contact us at [Contact Email].",
+            "By using our services, you consent to the practices described in this Privacy Policy. Your continued use of our platform signifies your acceptance of any updates to this Privacy Policy.",
+            "Thank you for trusting us with your data and for choosing Sharda Arts. Your privacy is important to us, and we are committed to protecting it."
+        ]
+    }
+
 }
