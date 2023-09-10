@@ -1,5 +1,6 @@
 import { NavMenuForGuest, NavMenuForUser, NavMenuDefault } from "../../types/Types";
 
+export const showSerchBarInFollowingPath:string[] = ["/"]
 
 export const DefaultNavMenu:NavMenuDefault[]  = [
     {

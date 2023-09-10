@@ -2,15 +2,15 @@ import style from "./Header.module.scss";
 import "../../animation.scss";
 import Container from "../container/Container"
 import { HiOutlineMenuAlt1 } from "react-icons/hi"
-import { AiOutlineClose } from "react-icons/ai";
-import { BsCart3, BsSearch } from "react-icons/bs";
+
+import { BsCart3 } from "react-icons/bs";
 import UserMenuDisplay from "./UserMenuDisplay";
 import { useState, useEffect } from "react";
 // import { DefaultNavMenu, UserNavMenu, UserMenuForDesktop } from "./DataForHeader";
-import { DefaultNavMenu, GuestNavMenu, GusetMenuForDesktop } from "./DataForHeader";
+import { DefaultNavMenu, GuestNavMenu, GusetMenuForDesktop, showSerchBarInFollowingPath } from "./DataForHeader";
 import { getIcons } from "../../utils/GetIcons";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { FaUserSecret } from "react-icons/fa";
 // import {profileImage} from "../../assets";
@@ -20,6 +20,11 @@ import { en_logo, rg_logo } from "../../assets";
 import { useTranslation } from 'react-i18next';
 import { langTranslation } from "../../utils/utils";
 import { useCurrentLang } from "../../context/LangContext";
+import SearchBar from "../searchBar/SearchBar";
+import MobileDropdwonMenu from "./MobileDropdwonMenu";
+import { ShowMobileMenu } from "../../types/Types";
+
+
 
 
 const Header = () => {
@@ -27,9 +32,9 @@ const Header = () => {
   const {t} = useTranslation();
 
  
-  const [showMobileMenu, setShowMobileMenu] = useState<string>("");
+  const [showMobileMenu, setShowMobileMenu] = useState<ShowMobileMenu>("");
   const [showUserMenu, setShowUserMenu] = useState<boolean>(false);
-  
+  const currentPath = useLocation()
 
   const { currentLang } = useCurrentLang();
 
@@ -52,29 +57,11 @@ const Header = () => {
     
     >
       {/* //!Mobile Menu Dropdown =========================> */}
-      <section
-        className={`${style.mobileMenuContainer} ${showMobileMenu}`}
-        tabIndex={0}
-        >
-        <div className={style.mobileMenu}>
-          <button className={style.closeBtn}
-            onClick={() => setShowMobileMenu("slide-out-top")}
-          ><AiOutlineClose /></button>
-          <div className={style.links}>
-            <Link to="/signin" className={style.link}>
-              <UserMenuDisplay />
-            </Link>
-            {
-              GuestNavMenu.map(({ path, name }) => (
-                <Link to={path} key={name} className={style.link}>
-                  {getIcons(name.toLowerCase())}
-                  <span>{t(langTranslation(name))}</span>
-                </Link>
-              ))
-            }
-          </div>
-        </div>
-      </section>
+      <MobileDropdwonMenu 
+      showMobileMenu={showMobileMenu} 
+      setShowMobileMenu={setShowMobileMenu} 
+      dropDownMenu={GuestNavMenu}
+      />
       
 
       {/* //!Middle Menu ===================================> */}
@@ -145,16 +132,10 @@ const Header = () => {
           </div>
         </section>
 
-
-
-        {/* //!Search Bar ===================================> */}
-        <form className={style.searchContainer}>
-          <input type="text" placeholder={t(langTranslation("search_placehoder"))} 
-          onClick={() => showUserMenu && setShowUserMenu(false)}
-          onFocus={() => showUserMenu && setShowUserMenu(false)}
-          />
-          <BsSearch className={style.icon} />
-        </form>
+        {/* //!Serach Bar ===================================> */}
+        {showSerchBarInFollowingPath.includes(currentPath.pathname) && <SearchBar showUserMenu={showUserMenu} setShowUserMenu={setShowUserMenu}/>}
+        
+        
       </Container>
     </nav>
   )

@@ -1,0 +1,27 @@
+@import "../../utilityClasses";
+
+.searchContainer {
+    display: flex;
+    padding-top: 1em;
+    position: relative;
+
+
+    input {
+        @include inputs;
+        flex: 1;
+        border: 0;
+        box-shadow: var(--drop-sm-shadow);
+
+        &:focus {
+            outline-color: var(--primary-dark-color);
+        }
+    }
+
+    .icon {
+        position: absolute;
+        right: 0.5em;
+        align-self: center;
+        color: var(--dark-opac-color);
+        font-size: calc(var(--icon-size) * 0.85)
+    }
+}

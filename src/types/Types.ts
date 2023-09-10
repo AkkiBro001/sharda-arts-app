@@ -1,8 +1,21 @@
 import { Dispatch, MouseEvent, SetStateAction } from "react";
 
+//! <<========================= Type for Header Component ======================================>>
+
 export interface SelectLang {
     value: string,
     label: string,
+}
+
+export interface ShowUserMenuProps {
+    showUserMenu: boolean,
+    setShowUserMenu: Dispatch<SetStateAction<boolean>>
+}
+
+export type ShowMobileMenu = "" | "slide-out-top" | "slide-in-top"
+export interface ShowMobileMenuProps {
+    showMobileMenu: ShowMobileMenu,
+    setShowMobileMenu: Dispatch<SetStateAction<ShowMobileMenu>>
 }
 
 

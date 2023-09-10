@@ -50,7 +50,7 @@ const Signup = () => {
                     </div>
 
                     <div className={style.privacy}>
-                        <Link to="/">{t("privacy_policy")}</Link>
+                        <Link to="/privacy-policy">{t("privacy_policy")}</Link>
                     </div>
                 </div>
 
