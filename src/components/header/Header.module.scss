@@ -55,12 +55,7 @@
                     @include regularText;
                     line-height: 0;
 
-                    &:hover, &:focus {
-                        background: var(--light-color-2);
-                    }
                 }
-
-
 
 
                 .link+.link {
@@ -69,6 +64,10 @@
                     align-items: center;
                     gap: 0.5em;
 
+                    &:hover, &:focus {
+                        background: var(--light-color-2);
+                    }
+
                     img{
                         width: var(--icon-sm-size);
                     };
@@ -76,6 +75,8 @@
                     svg {
                         font-size: var(--icon-sm-size);
                     }
+
+                    
                 }
             }
 
@@ -97,13 +98,21 @@
             line-height: 0;
             cursor: pointer;
 
+            &:focus-visible{
+                @include outerFocus;
+                outline-color: var(--primary-dark-color);
+                border-radius: var(--border-sm-radius);
+            }
+
+            
+
         }
 
         .mobileMenuIcon {
             border: 0;
             background-color: transparent;
-            
 
+        
             @include media_md {
                 display: none;
             }
@@ -111,6 +120,12 @@
 
         .logo {
            width: var(--nav-logo);
+
+           &:focus-visible{
+            @include outerFocus;
+            outline-color: var(--primary-dark-color);
+            border-radius: var(--border-sm-radius);
+            }
         }
 
         .desktopMenuContainer {
@@ -138,7 +153,11 @@
                 &:hover, &:focus {
                     background-color: var(--primary-dark-color);
                     color: var(--light-color);
+                    outline: 0;
                 }
+
+                
+            
             }
         }
 
@@ -151,6 +170,11 @@
 
             .cartIcon {
                 position: relative;
+
+                &:focus-visible{
+                    @include outerFocus;
+                    outline-color: var(--primary-dark-color);
+                }
 
                 .cartCounter {
                     position: absolute;
@@ -174,18 +198,30 @@
                 display: none;
                 position: relative;
 
+                
+
                 @include media_md {
                     display: flex;
                     align-items: center;
                     cursor: pointer;
                     gap: 0.25em;
-
+                    
+                    
+                    
                 }
 
+                
                 .userProfile {
                     display: flex;
                     align-items: center;
                     cursor: pointer;
+
+                    &:focus-visible{
+                        @include outerFocus;
+                        outline-color: var(--primary-dark-color);
+                        border-radius: var(--border-sm-radius);
+                        
+                    }
 
                     .userImage {
                         .guestIcon {
@@ -274,16 +310,13 @@
 
 
         input {
+            @include inputs;
             flex: 1;
-            padding: 0.5em;
-            font-size: var(--subTitle);
-            border-radius: var(--border-sm-radius);
             border: 0;
             box-shadow: var(--drop-sm-shadow);
 
             &:focus {
-                outline: 2px solid var(--dark-opac-color);
-                outline-offset: 2px;
+                outline-color: var(--primary-dark-color);
             }
         }
 
@@ -292,7 +325,7 @@
             right: 0.5em;
             align-self: center;
             color: var(--dark-opac-color);
-
+            font-size: calc(var(--icon-size) * 0.85)
         }
     }
 }

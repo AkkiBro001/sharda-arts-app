@@ -47,14 +47,14 @@
 
     }
 
-    .userSignIn {
-        p {
-            @include regularText;
+    .userInfo {
+        .userEmailID {
+            @include smallText;
             opacity: var(--font-dim-opac);
             display: flex;
             align-items: center;
             gap: 0.25em;
-
+            text-decoration: none;
         }
     }
 }

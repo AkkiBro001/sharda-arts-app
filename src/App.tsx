@@ -3,6 +3,7 @@ import { useCurrentLang } from "./context/LangContext"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import ChooseLanguage from "./pages/language/ChooseLangauge"
 import Home from "./pages/home/Home"
+import Signin from "./pages/language/signin/Signin"
 
 
 function App() {
@@ -29,6 +30,9 @@ function App() {
         <Route path="/" element={<Home langPopup={langPopup}/>}/>
         <Route path="/getting-started" element={<ChooseLanguage setShowLangPopup={setShowLangPopup} langPopup={langPopup}/>}/>
         <Route path="/choose-language" element={<ChooseLanguage setShowLangPopup={setShowLangPopup} langPopup={langPopup}/>}/>
+
+
+        <Route path="/signin" element={<Signin/>}/>
       </Routes>
       
       </BrowserRouter>

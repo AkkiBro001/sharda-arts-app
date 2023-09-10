@@ -6,14 +6,15 @@ import { AiOutlineClose } from "react-icons/ai";
 import { BsCart3, BsSearch } from "react-icons/bs";
 import UserMenuDisplay from "./UserMenuDisplay";
 import { useState, useEffect } from "react";
-import { DefaultNavMenu, UserNavMenu, UserMenuForDesktop } from "./DataForHeader";
-// import { DefaultNavMenu, GuestNavMenu, GusetMenuForDesktop } from "./DataForHeader";
+// import { DefaultNavMenu, UserNavMenu, UserMenuForDesktop } from "./DataForHeader";
+import { DefaultNavMenu, GuestNavMenu, GusetMenuForDesktop } from "./DataForHeader";
 import { getIcons } from "../../utils/GetIcons";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-// import { FaUserSecret } from "react-icons/fa";
-import { en_logo, profileImage, rg_logo } from "../../assets";
+import { FaUserSecret } from "react-icons/fa";
+// import {profileImage} from "../../assets";
+import { en_logo, rg_logo } from "../../assets";
 
 
 import { useTranslation } from 'react-i18next';
@@ -60,11 +61,11 @@ const Header = () => {
             onClick={() => setShowMobileMenu("slide-out-top")}
           ><AiOutlineClose /></button>
           <div className={style.links}>
-            <Link to="#" className={style.link}>
+            <Link to="/signin" className={style.link}>
               <UserMenuDisplay />
             </Link>
             {
-              UserNavMenu.map(({ path, name }) => (
+              GuestNavMenu.map(({ path, name }) => (
                 <Link to={path} key={name} className={style.link}>
                   {getIcons(name.toLowerCase())}
                   <span>{t(langTranslation(name))}</span>
@@ -114,8 +115,8 @@ const Header = () => {
               onKeyDown={(e)=>{(e.code === "Space" || e.code === "Enter") && setShowUserMenu(pre => !pre)}}
               >
                 <div className={style.userImage}>
-                  {/* <FaUserSecret className={style.guestIcon} /> */}
-                  <img src={profileImage} alt="profileImage" />
+                  <FaUserSecret className={style.guestIcon} />
+                  {/* <img src={profileImage} alt="profileImage" /> */}
                 </div>
                 <MdOutlineKeyboardArrowDown 
                 className={`${style.downArrowIcon} ${showUserMenu ? style.animate : ""}`}
@@ -124,11 +125,11 @@ const Header = () => {
 
               {showUserMenu && <section className={style.userProfileMenu}>
 
-                <Link to="#" className={style.link}>
+                <Link to="/signin" className={style.link}>
                   <UserMenuDisplay />
                 </Link>
                 {
-                  UserMenuForDesktop.map(({ path, name }) => (
+                  GusetMenuForDesktop.map(({ path, name }) => (
                     <Link to={path} key={name} className={style.link}>
                       {getIcons(name.toLowerCase())}
                       <span>{t(langTranslation(name))}</span>

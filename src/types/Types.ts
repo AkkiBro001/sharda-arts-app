@@ -20,7 +20,7 @@ export interface NavMenuForUser{
 
 
 export interface NavMenuForGuest{
-    name: Required<NavMenu | "Sign Up" | "Change Language">,
+    name: Required<NavMenu | "Sign In" | "Change Language">,
     path: string,
 }
 

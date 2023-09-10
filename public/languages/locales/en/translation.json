@@ -15,5 +15,13 @@
     "profile": "Profile",
     "my_orders": "My Orders",
     "logout": "Log Out",
-    "search_placehoder": "Search products / services here..."
+    "search_placehoder": "Search products / services here...",
+
+    "welcome": "Welcome",
+    "sign_with_google": "Sign in with google",
+    "or": "OR",
+    "email_palceholder": "Enter your email ID",
+    "password_palceholder": "Enter your password",
+    "no_account": "No account?",
+    "forgot_password": "Forgot Password?"
 }

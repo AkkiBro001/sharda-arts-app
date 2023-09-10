@@ -29,9 +29,15 @@
   
   @mixin smallText{
     font-size: var(--small-text);
-    line-height: calc(var(--small-text) * 1);
+    line-height: calc(var(--small-text) * 1.5);
     display: block;
     font-weight: var(--font-regular);
+}
+
+ //* Styling Utilities -------------------------------->
+ @mixin outerFocus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 1px;
 }
   
   
@@ -42,16 +48,29 @@
   @mixin button{
     border: none;
     padding: 0.35em 0.75em;
-    border-radius: var(--border-sm-radius);
+    border-radius: var(--border-md-radius);
     font-size: var(--regular-text);
     font-weight: var(--font-bold);
     letter-spacing: 0.5px;
     line-height: initial;
+    cursor: pointer;
     &:focus{
-      outline: 2px solid var(--primary-color);
-      outline-offset: 2px;
+      @include outerFocus;  
     }
   
   }
+
+  @mixin inputs{
+    font-size: calc(var(--regular-text) * 0.9);
+    padding: 0.65em;
+    border-radius: var(--border-md-radius);
+    border: 1px solid var(--light-color-2);
+    &:focus{
+      @include outerFocus;  
+    }
+  }
+
+
+ 
   
   

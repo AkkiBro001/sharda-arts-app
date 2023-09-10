@@ -57,13 +57,13 @@ export const GuestNavMenu:NavMenuForGuest[]  = [
         path:"/choose-language",
     },
     {
-        name: "Sign Up",
-        path: '/',
+        name: "Sign In",
+        path: '/signin',
     },
 ]
 
 
-const GuestMenuList = ["Sign Up", "Change Language"]
+const GuestMenuList = ["Sign In", "Change Language"]
 export const GusetMenuForDesktop = GuestNavMenu.filter(menu => GuestMenuList.includes(menu.name))
 
 

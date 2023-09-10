@@ -14,6 +14,14 @@
     "profile": "अकाऊंट प्रोफाईल",
     "my_orders": "ऑर्डर्स",
     "logout": "लॉगऑऊट करा",
-    "search_placehoder": "येथे प्रॉडक्ट्स / सेवा शोधा..."
+    "search_placehoder": "येथे प्रॉडक्ट्स / सेवा शोधा...",
+
+    "welcome": "आपले स्वागत आहे",
+    "sign_with_google": "गूगल अकाउंट ने लॉगिन करा",
+    "or": "किंवा",
+    "email_palceholder": "आपला ई-मेल आईडी भरा",
+    "password_palceholder": "आपला पासवर्ड भरा",
+    "no_account": "आपला अकाउंट नाही आहे?",
+    "forgot_password": "पासवर्ड विसरलात?"
     
 }
